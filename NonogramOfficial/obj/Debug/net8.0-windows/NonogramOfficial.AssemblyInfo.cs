@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("NonogramOfficial")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+145f9c75d06d1ab0adad568d994a0c93806a08ec")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fa276668ceca6f141668338643876ef0e7df205f")]
 [assembly: System.Reflection.AssemblyProductAttribute("NonogramOfficial")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NonogramOfficial")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
