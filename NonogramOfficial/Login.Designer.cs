@@ -31,7 +31,7 @@ namespace NonogramOfficial
         {
             label1 = new Label();
             button1 = new Button();
-            button2 = new Button();
+            buttonRegister = new Button();
             usernameTextBox = new TextBox();
             passwordTextBox = new TextBox();
             SuspendLayout();
@@ -45,7 +45,6 @@ namespace NonogramOfficial
             label1.Size = new Size(185, 72);
             label1.TabIndex = 0;
             label1.Text = "LOGIN";
-            label1.Click += this.label1_Click;
             // 
             // button1
             // 
@@ -55,20 +54,21 @@ namespace NonogramOfficial
             button1.TabIndex = 1;
             button1.Text = "Login";
             button1.UseVisualStyleBackColor = true;
-            button1.Click += this.button1_Click;
+            button1.Click += buttonLogin_Click;
             // 
-            // button2
+            // buttonRegister
             // 
-            button2.Location = new Point(316, 322);
-            button2.Name = "button2";
-            button2.Size = new Size(144, 39);
-            button2.TabIndex = 2;
-            button2.Text = "Nieuwe gebruiker";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += this.buttonGoToRegisterForm_Click;
+            buttonRegister.Location = new Point(316, 322);
+            buttonRegister.Name = "buttonRegister";
+            buttonRegister.Size = new Size(144, 39);
+            buttonRegister.TabIndex = 2;
+            buttonRegister.Text = "Nieuwe gebruiker";
+            buttonRegister.UseVisualStyleBackColor = true;
+            buttonRegister.Click += buttonGoToRegisterForm_Click;
             // 
             // usernameTextBox
             // 
+            usernameTextBox.ForeColor = SystemColors.WindowText;
             usernameTextBox.Location = new Point(314, 137);
             usernameTextBox.Name = "usernameTextBox";
             usernameTextBox.PlaceholderText = "naam";
@@ -90,7 +90,7 @@ namespace NonogramOfficial
             ClientSize = new Size(800, 450);
             Controls.Add(passwordTextBox);
             Controls.Add(usernameTextBox);
-            Controls.Add(button2);
+            Controls.Add(buttonRegister);
             Controls.Add(button1);
             Controls.Add(label1);
             Name = "Login";
@@ -103,7 +103,7 @@ namespace NonogramOfficial
 
         private Label label1;
         private Button button1;
-        private Button button2;
+        private Button buttonRegister;
         private TextBox usernameTextBox;
         private TextBox passwordTextBox;
     }

@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            textBox_username = new TextBox();
+            textBox_password = new TextBox();
             buttonCreateUser = new Button();
-            button1 = new Button();
+            buttonClose = new Button();
             SuspendLayout();
             // 
             // label1
@@ -44,23 +44,22 @@
             label1.Size = new Size(167, 54);
             label1.TabIndex = 0;
             label1.Text = "Register";
-            label1.Click += label1_Click;
             // 
-            // textBox1
+            // textBox_username
             // 
-            textBox1.Location = new Point(324, 140);
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = "naam";
-            textBox1.Size = new Size(156, 23);
-            textBox1.TabIndex = 1;
+            textBox_username.Location = new Point(324, 140);
+            textBox_username.Name = "textBox_username";
+            textBox_username.PlaceholderText = "naam";
+            textBox_username.Size = new Size(156, 23);
+            textBox_username.TabIndex = 1;
             // 
-            // textBox2
+            // textBox_password
             // 
-            textBox2.Location = new Point(326, 189);
-            textBox2.Name = "textBox2";
-            textBox2.PlaceholderText = "wachtwoord";
-            textBox2.Size = new Size(154, 23);
-            textBox2.TabIndex = 2;
+            textBox_password.Location = new Point(326, 189);
+            textBox_password.Name = "textBox_password";
+            textBox_password.PlaceholderText = "wachtwoord";
+            textBox_password.Size = new Size(154, 23);
+            textBox_password.TabIndex = 2;
             // 
             // buttonCreateUser
             // 
@@ -70,26 +69,26 @@
             buttonCreateUser.TabIndex = 3;
             buttonCreateUser.Text = "Account aanmaken";
             buttonCreateUser.UseVisualStyleBackColor = true;
-            buttonCreateUser.Click += button1_Click;
+            buttonCreateUser.Click += buttonRegisterUser_Click;
             // 
-            // button1
+            // buttonClose
             // 
-            button1.Location = new Point(325, 270);
-            button1.Name = "button1";
-            button1.Size = new Size(155, 23);
-            button1.TabIndex = 4;
-            button1.Text = "Terug";
-            button1.UseVisualStyleBackColor = true;
+            buttonClose.Location = new Point(325, 270);
+            buttonClose.Name = "buttonClose";
+            buttonClose.Size = new Size(155, 23);
+            buttonClose.TabIndex = 4;
+            buttonClose.Text = "Terug";
+            buttonClose.UseVisualStyleBackColor = true;
             // 
             // Register
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(button1);
+            Controls.Add(buttonClose);
             Controls.Add(buttonCreateUser);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(textBox_password);
+            Controls.Add(textBox_username);
             Controls.Add(label1);
             Name = "Register";
             Text = "Register";
@@ -100,9 +99,9 @@
         #endregion
 
         private Label label1;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox textBox_username;
+        private TextBox textBox_password;
         private Button buttonCreateUser;
-        private Button button1;
+        private Button buttonClose;
     }
 }

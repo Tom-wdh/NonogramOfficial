@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NonogramOfficial.Managers;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,19 +13,37 @@ namespace NonogramOfficial
 {
     public partial class Register : Form
     {
-        public Register()
+        private readonly UserManager _userManager;
+
+        public Register(UserManager userManager)
         {
             InitializeComponent();
+            _userManager = userManager;
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
+        
 
+        private void buttonClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private async void buttonRegisterUser_Click(object sender, EventArgs e)
         {
+            string username = textBox_username.Text.Trim();
+            string password = textBox_password.Text;
 
+            bool success = await _userManager.RegisterUserAsync(username, password);
+
+            if (success)
+            {
+                MessageBox.Show("Registratie succesvol!", "Succes", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Registratie mislukt! Gebruikersnaam bestaat al.", "Fout", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

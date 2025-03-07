@@ -21,7 +21,6 @@ C:\Users\Easla\OneDrive\Bureaublad\NONOGRAM-EXAM\project\NonogramOfficial\bin\De
 C:\Users\Easla\OneDrive\Bureaublad\NONOGRAM-EXAM\project\NonogramOfficial\bin\Debug\net8.0-windows\NonogramOfficial.runtimeconfig.json
 C:\Users\Easla\OneDrive\Bureaublad\NONOGRAM-EXAM\project\NonogramOfficial\bin\Debug\net8.0-windows\NonogramOfficial.dll
 C:\Users\Easla\OneDrive\Bureaublad\NONOGRAM-EXAM\project\NonogramOfficial\bin\Debug\net8.0-windows\NonogramOfficial.pdb
-C:\Users\Easla\OneDrive\Bureaublad\NONOGRAM-EXAM\project\NonogramOfficial\obj\Debug\net8.0-windows\NonogramOfficial.Form1.resources
 C:\Users\Easla\OneDrive\Bureaublad\NONOGRAM-EXAM\project\NonogramOfficial\obj\Debug\net8.0-windows\NonogramOfficial.Properties.Resources.resources
 C:\Users\Easla\OneDrive\Bureaublad\NONOGRAM-EXAM\project\NonogramOfficial\obj\Debug\net8.0-windows\NonogramOfficial.csproj.GenerateResource.cache
 C:\Users\Easla\OneDrive\Bureaublad\NONOGRAM-EXAM\project\NonogramOfficial\obj\Debug\net8.0-windows\NonogramOfficial.GeneratedMSBuildEditorConfig.editorconfig
@@ -36,3 +35,7 @@ C:\Users\Easla\OneDrive\Bureaublad\NONOGRAM-EXAM\project\NonogramOfficial\obj\De
 C:\Users\Easla\OneDrive\Bureaublad\NONOGRAM-EXAM\project\NonogramOfficial\obj\Debug\net8.0-windows\ref\NonogramOfficial.dll
 C:\Users\Easla\OneDrive\Bureaublad\NONOGRAM-EXAM\project\NonogramOfficial\obj\Debug\net8.0-windows\NonogramOfficial.Login.resources
 C:\Users\Easla\OneDrive\Bureaublad\NONOGRAM-EXAM\project\NonogramOfficial\obj\Debug\net8.0-windows\NonogramOfficial.Register.resources
+C:\Users\Easla\OneDrive\Bureaublad\NONOGRAM-EXAM\project\NonogramOfficial\obj\Debug\net8.0-windows\NonogramOfficial.Hoofdpagina.resources
+C:\Users\Easla\OneDrive\Bureaublad\NONOGRAM-EXAM\project\NonogramOfficial\obj\Debug\net8.0-windows\NonogramOfficial.csproj.AssemblyReference.cache
+C:\Users\Easla\OneDrive\Bureaublad\NONOGRAM-EXAM\project\NonogramOfficial\bin\Debug\net8.0-windows\Newtonsoft.Json.dll
+C:\Users\Easla\OneDrive\Bureaublad\NONOGRAM-EXAM\project\NonogramOfficial\obj\Debug\net8.0-windows\Nonogram.B6C6C95E.Up2Date
