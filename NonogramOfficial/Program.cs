@@ -1,3 +1,6 @@
+using NonogramOfficial.Initializers;
+using NonogramOfficial.Managers;
+
 namespace NonogramOfficial
 {
     internal static class Program
@@ -8,10 +11,12 @@ namespace NonogramOfficial
         [STAThread]
         static void Main()
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Form1());
+
+            var userManager = new UserManager();
+            AppInitializer.InitializeUserData(userManager);
+
+            Application.Run(new Hoofdpagina(userManager));
         }
     }
 }

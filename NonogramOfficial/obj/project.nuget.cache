@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "SARNG1uD8HY=",
+  "dgSpecHash": "zb+35xJOGGM=",
   "success": true,
-  "projectFilePath": "C:\\Users\\tomge\\source\\repos\\NonogramOfficial\\NonogramOfficial\\NonogramOfficial.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\Easla\\OneDrive\\Bureaublad\\NONOGRAM-EXAM\\project\\NonogramOfficial\\NonogramOfficial.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Easla\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
   "logs": []
 }
