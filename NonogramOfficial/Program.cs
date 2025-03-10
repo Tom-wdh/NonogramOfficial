@@ -12,8 +12,10 @@ namespace NonogramOfficial
         static void Main()
         {
             ApplicationConfiguration.Initialize();
+
             var userManager = new UserManager();
             AppInitializer.InitializeUserData(userManager);
+
             Application.Run(new Hoofdpagina(userManager));
         }
     }

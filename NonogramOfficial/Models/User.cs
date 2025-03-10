@@ -12,5 +12,6 @@ namespace NonogramOfficial.Models
         public required string Username { get; set; }
         public required string Salt { get; set; }
         public required string HashedPassword { get; set; }
+
     }
 }

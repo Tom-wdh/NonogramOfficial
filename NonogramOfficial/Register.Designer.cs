@@ -79,6 +79,7 @@
             buttonClose.TabIndex = 4;
             buttonClose.Text = "Terug";
             buttonClose.UseVisualStyleBackColor = true;
+            buttonClose.Click += buttonClose_Click;
             // 
             // Register
             // 
