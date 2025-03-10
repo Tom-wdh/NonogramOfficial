@@ -1,21 +1,30 @@
 namespace NonogramOfficial
 {
-    public partial class Form1 : Form
+    public partial class HomePage : Form
     {
-        public Form1()
+        public HomePage()
         {
             InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            label1.Enabled = false;
-            label1.Visible = false;
-            button1.Enabled = false;
-            button1.Visible = false;
-            button2.Enabled = false;
-            button2.Visible = false;
-            panel1.Visible = true;
+            DialogResult result = MessageBox.Show("Have you played before?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+
+            }
+            else
+            {
+          
+                Form2 newForm = new Form2();
+                newForm.StartPosition = FormStartPosition.Manual; // Allow manual positioning
+                newForm.Location = this.Location;
+                newForm.Show();
+                newForm.FormClosed += (s, args) => this.Close();
+
+            }
+
 
         }
 
@@ -36,7 +45,7 @@ namespace NonogramOfficial
 
         private void button4_Click(object sender, EventArgs e)
         {
-            panel2.Visible = true;
+            
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
