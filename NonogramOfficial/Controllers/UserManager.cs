@@ -16,6 +16,7 @@ namespace NonogramOfficial.Managers
     public class UserManager
     {
         private readonly string dataDirectory = "Users";
+        public User? LoggedInUser { get; private set; }
 
 
         public UserManager()
@@ -72,24 +73,28 @@ namespace NonogramOfficial.Managers
         // LoginUserAsync
         public async Task<bool> LoginUserAsync(string username, string password)
         {
-            // Bepaal het JSON-bestand op basis van de gebruikersnaam
             string filePath = Path.Combine(dataDirectory, username + ".json");
 
-            // Bestaat het bestand niet? Gebruiker bestaat niet
             if (!File.Exists(filePath))
             {
                 return false;
             }
 
-            // Lees het JSON-bestand uit
             string json = await File.ReadAllTextAsync(filePath);
             var user = JsonConvert.DeserializeObject<User>(json);
 
-            // Hash het ingevoerde wachtwoord met de opgeslagen salt
             string hashedInput = HashHelper.HashPassword(password, user.Salt);
 
-            // Vergelijk de hash met de opgeslagen hash
-            return hashedInput == user.HashedPassword;
+            if (hashedInput == user.HashedPassword)
+            {
+                LoggedInUser = user;  // Sla de ingelogde gebruiker op
+                return true;
+            }
+            else
+            {
+                LoggedInUser = null;
+                return false;
+            }
         }
 
 
