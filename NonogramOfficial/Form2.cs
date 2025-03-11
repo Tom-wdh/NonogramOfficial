@@ -25,8 +25,13 @@ namespace NonogramOfficial
 
         private void nextButton_Click(object sender, EventArgs e)
         {
-            tutorialText.Text = "";
+            tutorialText.Text = "When there are two numbers in a row or column, it means there are two separate groups of filled squares.\nExample:  If the clue is 2 2, it means:  \n- One group of 2 filled squares  \n- Another group of 2 filled squares  \n- At least one empty square between them  \nUse the grid size and other clues to figure out their exact positions!";
             tutorialGif.Image = tutorial2;
+        }
+
+        private void Tutorial_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

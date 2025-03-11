@@ -9,7 +9,7 @@ namespace NonogramOfficial
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Have you played before?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult result = MessageBox.Show("Have you played before?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
 
@@ -18,6 +18,7 @@ namespace NonogramOfficial
             {
           
                 Form2 newForm = new Form2();
+                this.Hide();
                 newForm.StartPosition = FormStartPosition.Manual; // Allow manual positioning
                 newForm.Location = this.Location;
                 newForm.Show();

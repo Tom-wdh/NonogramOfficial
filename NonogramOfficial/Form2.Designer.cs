@@ -39,16 +39,17 @@
             // 
             Tutorial.AutoSize = true;
             Tutorial.Font = new Font("Segoe UI", 30F);
-            Tutorial.Location = new Point(298, 9);
+            Tutorial.Location = new Point(293, 2);
             Tutorial.Name = "Tutorial";
             Tutorial.Size = new Size(195, 67);
             Tutorial.TabIndex = 0;
             Tutorial.Text = "Tutorial";
+            Tutorial.Click += Tutorial_Click;
             // 
             // tutorialText
             // 
             tutorialText.AutoSize = true;
-            tutorialText.Location = new Point(129, 69);
+            tutorialText.Location = new Point(129, 59);
             tutorialText.Name = "tutorialText";
             tutorialText.Size = new Size(514, 60);
             tutorialText.TabIndex = 1;
@@ -58,15 +59,15 @@
             // tutorialGif
             // 
             tutorialGif.Image = Properties.Resources.tutorial1;
-            tutorialGif.Location = new Point(374, 132);
+            tutorialGif.Location = new Point(373, 178);
             tutorialGif.Name = "tutorialGif";
-            tutorialGif.Size = new Size(41, 220);
+            tutorialGif.Size = new Size(37, 260);
             tutorialGif.TabIndex = 2;
             tutorialGif.TabStop = false;
             // 
             // nextButton
             // 
-            nextButton.Location = new Point(348, 387);
+            nextButton.Location = new Point(684, 409);
             nextButton.Name = "nextButton";
             nextButton.Size = new Size(94, 29);
             nextButton.TabIndex = 3;
