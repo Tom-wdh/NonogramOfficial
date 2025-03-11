@@ -42,6 +42,11 @@ namespace NonogramOfficial
             if (success)
             {
                 MessageBox.Show("Inloggen geslaagd!");
+                if (this.Owner is Hoofdpagina mainForm)
+                {
+                    //mainForm.UpdateLoggedInUserLabel();
+                }
+                this.Close();
             }
             else
             {

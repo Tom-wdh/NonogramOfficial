@@ -11,7 +11,20 @@ namespace NonogramOfficial
         {
             InitializeComponent();
             _userManager = userManager;
+            //UpdateLoggedInUserLabel();
         }
+
+        //public void UpdateLoggedInUserLabel()
+        //{
+        //    if (_userManager.LoggedInUser != null)
+        //    {
+        //        usernameLabel.Text = $"Ingelogd als: {_userManager.LoggedInUser.Username}";
+        //    }
+        //    else
+        //    {
+        //        usernameLabel.Text = "Niet ingelogd.";
+        //    }
+        //}
 
         private void StartButton_Click(object sender, EventArgs e)
         {
@@ -28,6 +41,8 @@ namespace NonogramOfficial
         private void buttonLogin_Click(object sender, EventArgs e)
         {
             var InlogForm = new Login(_userManager);
+            InlogForm.Owner = this;
+
             InlogForm.Show(); // Opent het login-scherm
         }
 
@@ -36,8 +51,5 @@ namespace NonogramOfficial
             var RegisterForm = new Register(_userManager);
             RegisterForm.Show(); // Opent het login-scherm
         }
-
-
-
     }
 }
