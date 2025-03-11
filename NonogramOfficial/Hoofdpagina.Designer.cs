@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Hoofdpagina));
             label1 = new Label();
             button1 = new Button();
             button2 = new Button();
@@ -36,8 +37,8 @@
             buttonRegister = new Button();
             button3 = new Button();
             label2 = new Label();
-            pictureBox1 = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            UserPictureBox = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)UserPictureBox).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -115,23 +116,24 @@
             label2.TabIndex = 0;
             label2.Text = "Nonogram";
             // 
-            // pictureBox1
+            // UserPictureBox
             // 
-            pictureBox1.BorderStyle = BorderStyle.FixedSingle;
-            pictureBox1.Image = Properties.Resources.User_Icon3;
-            pictureBox1.Location = new Point(12, 276);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(51, 50);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 7;
-            pictureBox1.TabStop = false;
+            UserPictureBox.BorderStyle = BorderStyle.FixedSingle;
+            UserPictureBox.Image = (Image)resources.GetObject("UserPictureBox.Image");
+            UserPictureBox.Location = new Point(12, 276);
+            UserPictureBox.Name = "UserPictureBox";
+            UserPictureBox.Size = new Size(51, 50);
+            UserPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            UserPictureBox.TabIndex = 7;
+            UserPictureBox.TabStop = false;
+            UserPictureBox.Click += buttonProfileSettings_Click;
             // 
             // Hoofdpagina
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(700, 338);
-            Controls.Add(pictureBox1);
+            Controls.Add(UserPictureBox);
             Controls.Add(button3);
             Controls.Add(buttonRegister);
             Controls.Add(buttonLogin);
@@ -141,8 +143,9 @@
             Controls.Add(label1);
             Margin = new Padding(3, 2, 3, 2);
             Name = "Hoofdpagina";
-            Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            Text = "Nonogram game";
+            Load += Hoofdpagina_Load;
+            ((System.ComponentModel.ISupportInitialize)UserPictureBox).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -157,6 +160,6 @@
         private Button buttonRegister;
         private Button button3;
         private Label label2;
-        private PictureBox pictureBox1;
+        private PictureBox UserPictureBox;
     }
 }

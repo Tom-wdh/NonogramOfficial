@@ -39,3 +39,4 @@ C:\Users\Easla\OneDrive\Bureaublad\NONOGRAM-EXAM\project\NonogramOfficial\obj\De
 C:\Users\Easla\OneDrive\Bureaublad\NONOGRAM-EXAM\project\NonogramOfficial\obj\Debug\net8.0-windows\NonogramOfficial.csproj.AssemblyReference.cache
 C:\Users\Easla\OneDrive\Bureaublad\NONOGRAM-EXAM\project\NonogramOfficial\bin\Debug\net8.0-windows\Newtonsoft.Json.dll
 C:\Users\Easla\OneDrive\Bureaublad\NONOGRAM-EXAM\project\NonogramOfficial\obj\Debug\net8.0-windows\Nonogram.B6C6C95E.Up2Date
+C:\Users\Easla\OneDrive\Bureaublad\NONOGRAM-EXAM\project\NonogramOfficial\obj\Debug\net8.0-windows\NonogramOfficial.ProfileSettings.resources

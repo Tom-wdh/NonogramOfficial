@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using NonogramOfficial.Managers;
+using NonogramOfficial.Controllers;
 
 namespace NonogramOfficial.Initializers
 {
     public static class AppInitializer
     {
-        public static void InitializeUserData(UserManager userManager)
+        public static void InitializeUserData(UserController userManager)
         {
             // Controleer of er al gebruikersbestand(en) zijn
             var existingFiles = userManager.CheckExistingJsonFiles();

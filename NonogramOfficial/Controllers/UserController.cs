@@ -10,16 +10,16 @@ using NonogramOfficial.Helpers;
 using NonogramOfficial.Models;
 using User = NonogramOfficial.Models.User;
 
-namespace NonogramOfficial.Managers
+namespace NonogramOfficial.Controllers 
 {
     
-    public class UserManager
+    public class UserController
     {
         private readonly string dataDirectory = "Users";
         public User? LoggedInUser { get; private set; }
 
 
-        public UserManager()
+        public UserController()
         {
             if (!Directory.Exists(dataDirectory))
             {
@@ -96,6 +96,70 @@ namespace NonogramOfficial.Managers
                 return false;
             }
         }
+
+
+
+        // Profielbeheer - UPDATE user data //
+        public async Task<bool> UpdateUserAsync(string oldUsername, string newUsername, string? newPassword)
+        {
+            string oldFilePath = Path.Combine(dataDirectory, oldUsername + ".json");
+            if (!File.Exists(oldFilePath))
+            {
+                return false; // Bestaat niet
+            }
+
+            // 1) Lees huidige gegevens
+            string json = await File.ReadAllTextAsync(oldFilePath);
+            var user = JsonConvert.DeserializeObject<User>(json);
+
+            // 2) Verwerk wijzigingen
+            if (!string.IsNullOrEmpty(newPassword))
+            {
+                string newSalt = HashHelper.GenerateSalt();
+                string newHashedPassword = HashHelper.HashPassword(newPassword, newSalt);
+                user.Salt = newSalt;
+                user.HashedPassword = newHashedPassword;
+            }
+            user.Username = newUsername;
+
+            // 3) Hernoem bestand als de username verandert
+            string newFilePath = Path.Combine(dataDirectory, newUsername + ".json");
+            if (!oldUsername.Equals(newUsername, StringComparison.OrdinalIgnoreCase))
+            {
+                File.Delete(oldFilePath);
+            }
+
+            // 4) Schrijf naar JSON
+            string updatedJson = JsonConvert.SerializeObject(user, Formatting.Indented);
+            await File.WriteAllTextAsync(newFilePath, updatedJson);
+
+            // 5) Als het de ingelogde gebruiker is, update LoggedInUser
+            if (LoggedInUser != null &&
+                LoggedInUser.Username.Equals(oldUsername, StringComparison.OrdinalIgnoreCase))
+            {
+                LoggedInUser = user;
+            }
+            return true;
+        }
+
+        // DELETE USER
+        public bool DeleteUser(string username)
+        {
+            string filePath = Path.Combine(dataDirectory, username + ".json");
+            if (File.Exists(filePath))
+            {
+                File.Delete(filePath);
+                if (LoggedInUser != null &&
+                    LoggedInUser.Username.Equals(username, StringComparison.OrdinalIgnoreCase))
+                {
+                    LoggedInUser = null;
+                }
+                return true;
+            }
+            return false;
+        }
+
+
 
 
     }

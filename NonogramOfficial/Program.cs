@@ -1,5 +1,5 @@
 using NonogramOfficial.Initializers;
-using NonogramOfficial.Managers;
+using NonogramOfficial.Controllers;
 
 namespace NonogramOfficial
 {
@@ -13,7 +13,7 @@ namespace NonogramOfficial
         {
             ApplicationConfiguration.Initialize();
 
-            var userManager = new UserManager();
+            var userManager = new UserController();
             AppInitializer.InitializeUserData(userManager);
 
             Application.Run(new Hoofdpagina(userManager));
