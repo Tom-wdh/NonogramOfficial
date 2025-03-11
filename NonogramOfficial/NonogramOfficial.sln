@@ -1,7 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
+<<<<<<< HEAD
 VisualStudioVersion = 17.12.35707.178
+=======
+VisualStudioVersion = 17.12.35707.178 d17.12
+>>>>>>> 8bcf6ab8a6870e9604e07d8f389222fff90c015a
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NonogramOfficial", "NonogramOfficial.csproj", "{2988A101-323D-4FD5-A2A8-E5F89DD8AEBA}"
 EndProject

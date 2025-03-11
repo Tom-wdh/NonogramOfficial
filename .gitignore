@@ -33,4 +33,8 @@ _ReSharper*/
 # -- OS specifieke bestanden --
 Thumbs.db
 ehthumbs.db
+<<<<<<< HEAD
 Desktop.ini
+=======
+Desktop.ini
+>>>>>>> 8bcf6ab8a6870e9604e07d8f389222fff90c015a
