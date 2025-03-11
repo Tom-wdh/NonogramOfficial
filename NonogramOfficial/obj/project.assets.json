@@ -55,23 +55,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Easla\\.nuget\\packages\\": {},
+    "C:\\Users\\tomge\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Easla\\OneDrive\\Bureaublad\\NONOGRAM-EXAM\\project\\NonogramOfficial\\NonogramOfficial.csproj",
+      "projectUniqueName": "C:\\Users\\tomge\\source\\repos\\Tom-wdh\\NonogramOfficial\\NonogramOfficial\\NonogramOfficial.csproj",
       "projectName": "NonogramOfficial",
-      "projectPath": "C:\\Users\\Easla\\OneDrive\\Bureaublad\\NONOGRAM-EXAM\\project\\NonogramOfficial\\NonogramOfficial.csproj",
-      "packagesPath": "C:\\Users\\Easla\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Easla\\OneDrive\\Bureaublad\\NONOGRAM-EXAM\\project\\NonogramOfficial\\obj\\",
+      "projectPath": "C:\\Users\\tomge\\source\\repos\\Tom-wdh\\NonogramOfficial\\NonogramOfficial\\NonogramOfficial.csproj",
+      "packagesPath": "C:\\Users\\tomge\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\tomge\\source\\repos\\Tom-wdh\\NonogramOfficial\\NonogramOfficial\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Easla\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\tomge\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -80,7 +80,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

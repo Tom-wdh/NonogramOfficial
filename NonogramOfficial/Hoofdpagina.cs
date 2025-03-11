@@ -28,12 +28,27 @@ namespace NonogramOfficial
 
         private void StartButton_Click(object sender, EventArgs e)
         {
+            DialogResult result = MessageBox.Show("Have you played before?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
 
+            }
+            else
+            {
+
+                Tutorial newForm = new Tutorial();
+                this.Hide();
+                newForm.StartPosition = FormStartPosition.Manual; // Allow manual positioning
+                newForm.Location = this.Location;
+                newForm.Show();
+                newForm.FormClosed += (s, args) => this.Close();
+
+            }
         }
 
         private void buttonQuit_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
 

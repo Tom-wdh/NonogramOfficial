@@ -29,6 +29,7 @@
 
   <ItemGroup>
     <Folder Include="Media\" />
+    <Folder Include="Resources\" />
   </ItemGroup>
 
 </Project>
