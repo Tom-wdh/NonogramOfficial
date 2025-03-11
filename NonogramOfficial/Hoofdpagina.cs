@@ -1,30 +1,23 @@
-using NonogramOfficial.Managers;
+using NonogramOfficial.Controllers;
 
 namespace NonogramOfficial
 {
     public partial class Hoofdpagina : Form
     {
 
-        private readonly UserManager _userManager;
+        private readonly UserController _uc;
 
-        public Hoofdpagina(UserManager userManager)
+        public Hoofdpagina(UserController _uc)
         {
             InitializeComponent();
-            _userManager = userManager;
-            //UpdateLoggedInUserLabel();
+            this._uc = _uc;
         }
 
-        //public void UpdateLoggedInUserLabel()
-        //{
-        //    if (_userManager.LoggedInUser != null)
-        //    {
-        //        usernameLabel.Text = $"Ingelogd als: {_userManager.LoggedInUser.Username}";
-        //    }
-        //    else
-        //    {
-        //        usernameLabel.Text = "Niet ingelogd.";
-        //    }
-        //}
+        private void Hoofdpagina_Load(object sender, EventArgs e)
+        {
+
+        }
+
 
         private void StartButton_Click(object sender, EventArgs e)
         {
@@ -55,16 +48,28 @@ namespace NonogramOfficial
         // door verwijzing naar Login pagina
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            var InlogForm = new Login(_userManager);
-            InlogForm.Owner = this;
-
+            var InlogForm = new Login(_uc);
             InlogForm.Show(); // Opent het login-scherm
         }
 
         private void buttonRegister_Click(object sender, EventArgs e)
         {
-            var RegisterForm = new Register(_userManager);
-            RegisterForm.Show(); // Opent het login-scherm
+            var RegisterForm = new Register(_uc);
+            RegisterForm.Show(); // Opent het Register form
         }
+
+        private void buttonProfileSettings_Click(object sender, EventArgs e)
+        {
+            if (_uc.LoggedInUser == null) {
+                // open dialog needs to login first
+                MessageBox.Show("Create account to use profile settings or login with account", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            } else
+            {
+                var ProfileForm = new ProfileSettings(_uc);
+                ProfileForm.Show(); // Opent het Profiel form
+            }
+        }
+
+       
     }
 }

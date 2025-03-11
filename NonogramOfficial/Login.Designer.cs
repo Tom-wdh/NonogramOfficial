@@ -94,7 +94,7 @@ namespace NonogramOfficial
             Controls.Add(button1);
             Controls.Add(label1);
             Name = "Login";
-            Text = "Form2";
+            Text = "Login";
             ResumeLayout(false);
             PerformLayout();
         }

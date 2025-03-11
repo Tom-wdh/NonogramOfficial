@@ -1,4 +1,4 @@
-﻿using NonogramOfficial.Managers;
+﻿using NonogramOfficial.Controllers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,9 +13,9 @@ namespace NonogramOfficial
 {
     public partial class Register : Form
     {
-        private readonly UserManager _userManager;
+        private readonly UserController _userManager;
 
-        public Register(UserManager userManager)
+        public Register(UserController userManager)
         {
             InitializeComponent();
             _userManager = userManager;
