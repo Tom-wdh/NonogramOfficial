@@ -18,6 +18,8 @@
 # -- Buildoutput (bin/ en obj/) --
 [Bb]in/
 [Oo]bj/
+obj/
+bin/
 
 # -- NuGet Packages (optioneel, als je Package Restore gebruikt) --
 #**/packages/*
