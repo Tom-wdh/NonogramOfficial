@@ -1,0 +1,40 @@
+# -- Visual Studio- en systeembestanden --
+.vs/
+*.user
+*.suo
+*.sln.docstates
+*.cache
+*.pdb
+*.log
+*.obj
+*.exe
+*.dll
+*.tlb
+*.tlh
+*.tli
+*.db
+*.opendb
+
+# -- Buildoutput (bin/ en obj/) --
+[Bb]in/
+[Oo]bj/
+obj/
+bin/
+
+# -- NuGet Packages (optioneel, als je Package Restore gebruikt) --
+#**/packages/*
+#!**/packages/build/
+
+# -- Resharper / Rider / andere IDE bestanden (optioneel) --
+*.DotSettings.user
+_ReSharper*/
+*.sln.DotSettings
+
+# -- OS specifieke bestanden --
+Thumbs.db
+ehthumbs.db
+<<<<<<< HEAD
+Desktop.ini
+=======
+Desktop.ini
+>>>>>>> 8bcf6ab8a6870e9604e07d8f389222fff90c015a
