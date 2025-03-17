@@ -13,7 +13,7 @@ using User = NonogramOfficial.Models.User;
 namespace NonogramOfficial.Controllers 
 {
     
-    public class UserController
+    public class UserController : User
     {
         private readonly string dataDirectory = "Users";
         public User? LoggedInUser { get; private set; }
