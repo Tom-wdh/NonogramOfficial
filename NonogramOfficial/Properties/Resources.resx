@@ -118,22 +118,22 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="User_Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="User_Icon2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Media\User_Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="User_Icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="User_Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Media\User_Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="User_Icon3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Media\User_Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="User_Icon2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="User_Icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Media\User_Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="nono22-ezgif.com-video-to-gif-converter" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\nono22-ezgif.com-video-to-gif-converter.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="tutorial1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\tutorial1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="nono5-ezgif.com-video-to-gif-converter" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\nono5-ezgif.com-video-to-gif-converter.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="tutorial2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Images\tutorial2.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

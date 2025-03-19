@@ -63,9 +63,9 @@ namespace NonogramOfficial.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap nono22_ezgif_com_video_to_gif_converter {
+        internal static System.Drawing.Bitmap tutorial1 {
             get {
-                object obj = ResourceManager.GetObject("nono22-ezgif.com-video-to-gif-converter", resourceCulture);
+                object obj = ResourceManager.GetObject("tutorial1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace NonogramOfficial.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap nono5_ezgif_com_video_to_gif_converter {
+        internal static System.Drawing.Bitmap tutorial2 {
             get {
-                object obj = ResourceManager.GetObject("nono5-ezgif.com-video-to-gif-converter", resourceCulture);
+                object obj = ResourceManager.GetObject("tutorial2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -39,9 +39,9 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 30F);
-            label1.Location = new Point(246, -2);
+            label1.Location = new Point(281, -3);
             label1.Name = "label1";
-            label1.Size = new Size(167, 54);
+            label1.Size = new Size(206, 67);
             label1.TabIndex = 0;
             label1.Text = "Tutorial:";
             label1.Click += label1_Click;
@@ -49,29 +49,27 @@
             // tutorialText
             // 
             tutorialText.AutoSize = true;
-            tutorialText.Location = new Point(31, 48);
+            tutorialText.Location = new Point(35, 64);
             tutorialText.Name = "tutorialText";
-            tutorialText.Size = new Size(414, 45);
+            tutorialText.Size = new Size(514, 60);
             tutorialText.TabIndex = 1;
             tutorialText.Text = "If the clue is \"3\", you must fill three connected squares in that row or column.\nUse the grid's size and other clues to determine the exact placement!\nIn the example below the clue is \"5\".";
             // 
             // tutorialGif
             // 
-            tutorialGif.Image = Properties.Resources.nono5_ezgif_com_video_to_gif_converter;
-            tutorialGif.Location = new Point(498, 89);
-            tutorialGif.Margin = new Padding(3, 2, 3, 2);
+            tutorialGif.Image = Properties.Resources.tutorial1;
+            tutorialGif.Location = new Point(569, 119);
             tutorialGif.Name = "tutorialGif";
-            tutorialGif.Size = new Size(46, 275);
+            tutorialGif.Size = new Size(53, 367);
             tutorialGif.TabIndex = 2;
             tutorialGif.TabStop = false;
             tutorialGif.Click += tutorialGif_Click;
             // 
             // nextButton
             // 
-            nextButton.Location = new Point(606, 332);
-            nextButton.Margin = new Padding(3, 2, 3, 2);
+            nextButton.Location = new Point(693, 443);
             nextButton.Name = "nextButton";
-            nextButton.Size = new Size(82, 22);
+            nextButton.Size = new Size(94, 29);
             nextButton.TabIndex = 3;
             nextButton.Text = "Next->";
             nextButton.UseVisualStyleBackColor = true;
@@ -79,14 +77,13 @@
             // 
             // Tutorial
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(700, 365);
+            ClientSize = new Size(800, 487);
             Controls.Add(nextButton);
             Controls.Add(tutorialGif);
             Controls.Add(tutorialText);
             Controls.Add(label1);
-            Margin = new Padding(3, 2, 3, 2);
             Name = "Tutorial";
             Text = "Tutorial";
             ((System.ComponentModel.ISupportInitialize)tutorialGif).EndInit();
