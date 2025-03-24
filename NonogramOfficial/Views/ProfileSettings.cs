@@ -28,19 +28,26 @@ namespace NonogramOfficial
 
         private async void UpdateProfileSettings_Click(object sender, EventArgs e)
         {
-            string oldUsername = _uc.LoggedInUser.Username;
-            string newUsername = UserTextBox.Text.Trim();
-            string newPassword = PasswordTextBox.Text;
-
-            bool updated = await _uc.UpdateUserAsync(oldUsername, newUsername, newPassword);
-            if (updated)
+            var confirm = MessageBox.Show("Are you sure you want to update your profile settings?","Update profile settings",MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
+            if (confirm == DialogResult.No)
             {
-                MessageBox.Show("Profiel bijgewerkt!");
-                this.Close();
+                return;
             }
-            else
-            {
-                MessageBox.Show("Updaten mislukt!");
+            else {
+                string oldUsername = _uc.LoggedInUser.Username;
+                string newUsername = UserTextBox.Text.Trim();
+                string newPassword = PasswordTextBox.Text;
+
+                bool updated = await _uc.UpdateUserAsync(oldUsername, newUsername, newPassword);
+                if (updated)
+                {
+                    MessageBox.Show("Profiel bijgewerkt!");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Updaten mislukt!");
+                }
             }
         }
 
