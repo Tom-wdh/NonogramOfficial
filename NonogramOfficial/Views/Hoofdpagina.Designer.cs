@@ -35,7 +35,7 @@
             colorDialog1 = new ColorDialog();
             buttonLogin = new Button();
             buttonRegister = new Button();
-            button3 = new Button();
+            SettingsButton = new Button();
             label2 = new Label();
             UserPictureBox = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)UserPictureBox).BeginInit();
@@ -95,16 +95,17 @@
             buttonRegister.UseVisualStyleBackColor = true;
             buttonRegister.Click += buttonRegister_Click;
             // 
-            // button3
+            // SettingsButton
             // 
-            button3.Font = new Font("Segoe UI", 29F);
-            button3.Location = new Point(255, 160);
-            button3.Margin = new Padding(3, 2, 3, 2);
-            button3.Name = "button3";
-            button3.Size = new Size(208, 59);
-            button3.TabIndex = 6;
-            button3.Text = "Settings";
-            button3.UseVisualStyleBackColor = true;
+            SettingsButton.Font = new Font("Segoe UI", 29F);
+            SettingsButton.Location = new Point(255, 160);
+            SettingsButton.Margin = new Padding(3, 2, 3, 2);
+            SettingsButton.Name = "SettingsButton";
+            SettingsButton.Size = new Size(208, 59);
+            SettingsButton.TabIndex = 6;
+            SettingsButton.Text = "Settings";
+            SettingsButton.UseVisualStyleBackColor = true;
+            SettingsButton.Click += SettingsButton_Click;
             // 
             // label2
             // 
@@ -134,7 +135,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(700, 338);
             Controls.Add(UserPictureBox);
-            Controls.Add(button3);
+            Controls.Add(SettingsButton);
             Controls.Add(buttonRegister);
             Controls.Add(buttonLogin);
             Controls.Add(button2);
@@ -158,7 +159,7 @@
         private ColorDialog colorDialog1;
         private Button buttonLogin;
         private Button buttonRegister;
-        private Button button3;
+        private Button SettingsButton;
         private Label label2;
         private PictureBox UserPictureBox;
     }

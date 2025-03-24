@@ -62,7 +62,7 @@ namespace NonogramOfficial
             buttonRegister.Name = "buttonRegister";
             buttonRegister.Size = new Size(144, 39);
             buttonRegister.TabIndex = 2;
-            buttonRegister.Text = "Nieuwe gebruiker";
+            buttonRegister.Text = "Create New User";
             buttonRegister.UseVisualStyleBackColor = true;
             buttonRegister.Click += buttonGoToRegisterForm_Click;
             // 
@@ -71,7 +71,7 @@ namespace NonogramOfficial
             usernameTextBox.ForeColor = SystemColors.WindowText;
             usernameTextBox.Location = new Point(314, 137);
             usernameTextBox.Name = "usernameTextBox";
-            usernameTextBox.PlaceholderText = "naam";
+            usernameTextBox.PlaceholderText = "name";
             usernameTextBox.Size = new Size(146, 23);
             usernameTextBox.TabIndex = 3;
             // 
@@ -79,7 +79,7 @@ namespace NonogramOfficial
             // 
             passwordTextBox.Location = new Point(315, 188);
             passwordTextBox.Name = "passwordTextBox";
-            passwordTextBox.PlaceholderText = "wachtwoord";
+            passwordTextBox.PlaceholderText = "password";
             passwordTextBox.Size = new Size(145, 23);
             passwordTextBox.TabIndex = 4;
             // 
@@ -95,6 +95,7 @@ namespace NonogramOfficial
             Controls.Add(label1);
             Name = "Login";
             Text = "Login";
+            Load += Login_Load;
             ResumeLayout(false);
             PerformLayout();
         }

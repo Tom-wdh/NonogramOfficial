@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NonogramOfficial.Helpers;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,11 +13,22 @@ namespace NonogramOfficial
 {
     public partial class Tutorial : Form
     {
+        private AppSettings _settings;
         Image tutorial2 = Properties.Resources.tutorial2;
+        
         public Tutorial()
         {
             InitializeComponent();
+            _settings = AppSettings.LoadSettings();
         }
+        private void Tutorial_Load(object sender, EventArgs e)
+        {
+            if (_settings != null && !string.IsNullOrEmpty(_settings.FontFamily))
+            {
+                FontHelper.ApplyGlobalFont(this, _settings.FontFamily);
+            }
+        }
+        
 
         private void nextButton_Click(object sender, EventArgs e)
         {
@@ -25,11 +37,6 @@ namespace NonogramOfficial
         }
 
         private void tutorialGif_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
         {
 
         }
