@@ -44,7 +44,6 @@
             label1.Size = new Size(167, 54);
             label1.TabIndex = 0;
             label1.Text = "Tutorial:";
-            label1.Click += label1_Click;
             // 
             // tutorialText
             // 
@@ -89,6 +88,7 @@
             Margin = new Padding(3, 2, 3, 2);
             Name = "Tutorial";
             Text = "Tutorial";
+            Load += Tutorial_Load;
             ((System.ComponentModel.ISupportInitialize)tutorialGif).EndInit();
             ResumeLayout(false);
             PerformLayout();

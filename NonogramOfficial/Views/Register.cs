@@ -1,4 +1,5 @@
 ﻿using NonogramOfficial.Controllers;
+using NonogramOfficial.Helpers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,14 +15,22 @@ namespace NonogramOfficial
     public partial class Register : Form
     {
         private readonly UserController _userManager;
+        private AppSettings _settings;
 
         public Register(UserController userManager)
         {
             InitializeComponent();
+            _settings = AppSettings.LoadSettings();
             _userManager = userManager;
         }
 
-        
+        private void Register_Load(object sender, EventArgs e)
+        {
+            if (_settings != null && !string.IsNullOrEmpty(_settings.FontFamily))
+            {
+                FontHelper.ApplyGlobalFont(this, _settings.FontFamily);
+            }
+        }
 
         private void buttonClose_Click(object sender, EventArgs e)
         {
