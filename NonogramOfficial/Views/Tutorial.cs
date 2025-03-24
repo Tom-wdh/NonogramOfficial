@@ -13,10 +13,9 @@ namespace NonogramOfficial
 {
     public partial class Tutorial : Form
     {
-        Image tutorial2 = Properties.Resources.nono22_ezgif_com_video_to_gif_converter;
         private AppSettings _settings;
-
-
+        Image tutorial2 = Properties.Resources.tutorial2;
+        
         public Tutorial()
         {
             InitializeComponent();
