@@ -56,6 +56,7 @@ namespace NonogramOfficial
                 if (this.Owner is Hoofdpagina mainForm)
                 {
                     //mainForm.UpdateLoggedInUserLabel();
+                    
                 }
                 this.Close();
             }
