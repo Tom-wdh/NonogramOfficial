@@ -55,27 +55,61 @@ namespace NonogramOfficial
         private void buttonLogin_Click(object sender, EventArgs e)
         {
             var InlogForm = new Login(_uc);
-            InlogForm.Show(); // Opent het login-scherm
+            // Opent het login-scherm
+            InlogForm.ShowDialog();
+            DisableButtons();
+
         }
 
         private void buttonRegister_Click(object sender, EventArgs e)
         {
             var RegisterForm = new Register(_uc);
             RegisterForm.Show(); // Opent het Register form
+
+
         }
 
         private void buttonProfileSettings_Click(object sender, EventArgs e)
         {
-            if (_uc.LoggedInUser == null) {
+            if (_uc.LoggedInUser == null)
+            {
                 // open dialog needs to login first
                 MessageBox.Show("Create account to use profile settings or login with account", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            } else
+            }
+            else
             {
                 var ProfileForm = new ProfileSettings(_uc);
                 ProfileForm.Show(); // Opent het Profiel form
             }
         }
 
-       
+        public void DisableButtons()
+        {
+            if (_uc.LoggedInUser != null)
+            {
+                buttonLogin.Visible = false;
+                buttonLogin.Enabled = false;
+                buttonRegister.Visible = false;
+                buttonRegister.Enabled = false;
+                buttonLogout.Visible = true;
+            }
+            else
+            {
+                buttonLogin.Visible = true;
+                buttonLogin.Enabled = true;
+                buttonRegister.Visible = true;
+                buttonRegister.Enabled = true;
+            }
+        }
+
+        private void buttonLogout_Click(object sender, EventArgs e)
+        {
+            if (_uc.LoggedInUser != null)
+            {
+                // Call a method to handle the logout process
+                MessageBox.Show("You have been logged out", "Logout", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                DisableButtons();
+            }
+        }
     }
 }
