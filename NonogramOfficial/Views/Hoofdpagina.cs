@@ -1,5 +1,8 @@
 using NonogramOfficial.Controllers;
+using NonogramOfficial.Properties;
+using NonogramOfficial.Views;
 using NonogramPuzzle;
+using Settings = NonogramOfficial.Views.Settings;
 
 namespace NonogramOfficial
 {
@@ -43,6 +46,14 @@ namespace NonogramOfficial
                 newForm.FormClosed += (s, args) => this.Close();
 
             }
+        }
+
+        private void SettingsButton_Click(Object sender, EventArgs e)
+        {
+            var currentSettings = AppSettings.LoadSettings();
+
+            var SettingsForm = new Settings(currentSettings);
+            SettingsForm.Show();
         }
 
         private void buttonQuit_Click(object sender, EventArgs e)

@@ -49,7 +49,7 @@
             // 
             textBox_username.Location = new Point(324, 140);
             textBox_username.Name = "textBox_username";
-            textBox_username.PlaceholderText = "naam";
+            textBox_username.PlaceholderText = "name";
             textBox_username.Size = new Size(156, 23);
             textBox_username.TabIndex = 1;
             // 
@@ -57,7 +57,7 @@
             // 
             textBox_password.Location = new Point(326, 189);
             textBox_password.Name = "textBox_password";
-            textBox_password.PlaceholderText = "wachtwoord";
+            textBox_password.PlaceholderText = "password";
             textBox_password.Size = new Size(154, 23);
             textBox_password.TabIndex = 2;
             // 
@@ -67,7 +67,7 @@
             buttonCreateUser.Name = "buttonCreateUser";
             buttonCreateUser.Size = new Size(156, 23);
             buttonCreateUser.TabIndex = 3;
-            buttonCreateUser.Text = "Account aanmaken";
+            buttonCreateUser.Text = "Create Account";
             buttonCreateUser.UseVisualStyleBackColor = true;
             buttonCreateUser.Click += buttonRegisterUser_Click;
             // 
@@ -77,7 +77,7 @@
             buttonClose.Name = "buttonClose";
             buttonClose.Size = new Size(155, 23);
             buttonClose.TabIndex = 4;
-            buttonClose.Text = "Terug";
+            buttonClose.Text = "Go back";
             buttonClose.UseVisualStyleBackColor = true;
             buttonClose.Click += buttonClose_Click;
             // 
@@ -93,6 +93,7 @@
             Controls.Add(label1);
             Name = "Register";
             Text = "Register";
+            Load += Register_Load;
             ResumeLayout(false);
             PerformLayout();
         }

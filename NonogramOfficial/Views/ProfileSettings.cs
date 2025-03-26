@@ -8,22 +8,30 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using NonogramOfficial.Controllers;
+using NonogramOfficial.Helpers;
 
 namespace NonogramOfficial
 {
     public partial class ProfileSettings : Form
     {
         private readonly UserController _uc;
+        private AppSettings _settings;
 
         public ProfileSettings(UserController _uc)
         {
             InitializeComponent();
+            _settings = AppSettings.LoadSettings();
             this._uc = _uc;
         }
 
         private void ProfileSettings_Load(object sender, EventArgs e)
         {
             UserTextBox.Text = _uc.LoggedInUser.Username;
+
+            if (_settings != null && !string.IsNullOrEmpty(_settings.FontFamily))
+            {
+                FontHelper.ApplyGlobalFont(this, _settings.FontFamily);
+            }
         }
 
         private async void UpdateProfileSettings_Click(object sender, EventArgs e)

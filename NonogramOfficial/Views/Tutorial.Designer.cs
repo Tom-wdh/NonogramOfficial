@@ -44,7 +44,6 @@
             label1.Size = new Size(206, 67);
             label1.TabIndex = 0;
             label1.Text = "Tutorial:";
-            label1.Click += label1_Click;
             // 
             // tutorialText
             // 
@@ -86,6 +85,7 @@
             Controls.Add(label1);
             Name = "Tutorial";
             Text = "Tutorial";
+            Load += Tutorial_Load;
             ((System.ComponentModel.ISupportInitialize)tutorialGif).EndInit();
             ResumeLayout(false);
             PerformLayout();
