@@ -11,20 +11,19 @@ namespace NonogramPuzzle.Initializers
             solution = new int[gridSize, gridSize];
             var threadLocalRandom = new System.Threading.ThreadLocal<Random>(() => new Random(Guid.NewGuid().GetHashCode()));
 
-            int[,] localPuzzle = new int[gridSize, gridSize];
             int[,] localSolution = new int[gridSize, gridSize];
 
-            Parallel.For(0, gridSize, row =>
+            for (int row = 0; row < gridSize; row++)
             {
                 var random = threadLocalRandom.Value;
                 for (int col = 0; col < gridSize; col++)
                 {
-                    localPuzzle[row, col] = random.Next(2);
-                    localSolution[row, col] = localPuzzle[row, col];
+                    localSolution[row, col] = random.Next(2);
                 }
-            });
+            }
 
-            Array.Copy(localPuzzle, puzzle, localPuzzle.Length);
+            // Initialize the puzzle with zeros (blank cells)
+            Array.Clear(puzzle, 0, puzzle.Length);
             Array.Copy(localSolution, solution, localSolution.Length);
         }
     }
