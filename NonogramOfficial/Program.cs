@@ -1,5 +1,6 @@
 using NonogramOfficial.Initializers;
 using NonogramOfficial.Controllers;
+using NonogramOfficial.Helpers;
 
 namespace NonogramOfficial
 {
@@ -16,7 +17,12 @@ namespace NonogramOfficial
             var userManager = new UserController();
             AppInitializer.InitializeUserData(userManager);
 
-            Application.Run(new Hoofdpagina(userManager));
+            AppSettings settings = AppSettings.LoadSettings();
+
+            var hoofdForm = new Hoofdpagina(userManager);
+            FontHelper.ApplyGlobalFont(hoofdForm, settings.FontFamily);
+
+            Application.Run(hoofdForm);
         }
     }
 }

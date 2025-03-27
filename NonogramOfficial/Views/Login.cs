@@ -9,20 +9,31 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using NonogramOfficial.Controllers;
+using NonogramOfficial.Helpers;
 
 namespace NonogramOfficial
 {
     public partial class Login : Form
     {
         private readonly UserController _uc;
+        private AppSettings _settings;
 
-        
+
 
         public Login(UserController userManager)
         {
             InitializeComponent();
+            _settings = AppSettings.LoadSettings();
             _uc = userManager;
 
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+            if (_settings != null && !string.IsNullOrEmpty(_settings.FontFamily))
+            {
+                FontHelper.ApplyGlobalFont(this, _settings.FontFamily);
+            }
         }
 
         private void buttonGoToRegisterForm_Click(object sender, EventArgs e)
@@ -45,6 +56,7 @@ namespace NonogramOfficial
                 if (this.Owner is Hoofdpagina mainForm)
                 {
                     //mainForm.UpdateLoggedInUserLabel();
+                    
                 }
                 this.Close();
             }

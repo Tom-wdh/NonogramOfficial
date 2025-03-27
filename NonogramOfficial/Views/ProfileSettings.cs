@@ -8,39 +8,54 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using NonogramOfficial.Controllers;
+using NonogramOfficial.Helpers;
 
 namespace NonogramOfficial
 {
     public partial class ProfileSettings : Form
     {
         private readonly UserController _uc;
+        private AppSettings _settings;
 
         public ProfileSettings(UserController _uc)
         {
             InitializeComponent();
+            _settings = AppSettings.LoadSettings();
             this._uc = _uc;
         }
 
         private void ProfileSettings_Load(object sender, EventArgs e)
         {
             UserTextBox.Text = _uc.LoggedInUser.Username;
+
+            if (_settings != null && !string.IsNullOrEmpty(_settings.FontFamily))
+            {
+                FontHelper.ApplyGlobalFont(this, _settings.FontFamily);
+            }
         }
 
         private async void UpdateProfileSettings_Click(object sender, EventArgs e)
         {
-            string oldUsername = _uc.LoggedInUser.Username;
-            string newUsername = UserTextBox.Text.Trim();
-            string newPassword = PasswordTextBox.Text;
-
-            bool updated = await _uc.UpdateUserAsync(oldUsername, newUsername, newPassword);
-            if (updated)
+            var confirm = MessageBox.Show("Are you sure you want to update your profile settings?","Update profile settings",MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
+            if (confirm == DialogResult.No)
             {
-                MessageBox.Show("Profiel bijgewerkt!");
-                this.Close();
+                return;
             }
-            else
-            {
-                MessageBox.Show("Updaten mislukt!");
+            else {
+                string oldUsername = _uc.LoggedInUser.Username;
+                string newUsername = UserTextBox.Text.Trim();
+                string newPassword = PasswordTextBox.Text;
+
+                bool updated = await _uc.UpdateUserAsync(oldUsername, newUsername, newPassword);
+                if (updated)
+                {
+                    MessageBox.Show("Profiel bijgewerkt!");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Updaten mislukt!");
+                }
             }
         }
 

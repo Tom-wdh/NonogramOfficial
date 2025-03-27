@@ -38,10 +38,12 @@ namespace NonogramPuzzle
             resetButton = new Button();
             saveButton = new Button();
             loadButton = new Button();
+
             comboBoxLabel = new Label();
             buttonStatistics = new Button();
             buttonMainMenu = new Button();
             solveButton = new Button();
+
             SuspendLayout();
             // 
             // nonogram
@@ -54,6 +56,7 @@ namespace NonogramPuzzle
             nonogram.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
             nonogram.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
             nonogram.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
+
             nonogram.Location = new Point(290, 188);
             nonogram.Margin = new Padding(3, 2, 3, 2);
             nonogram.Name = "nonogram";
@@ -138,6 +141,7 @@ namespace NonogramPuzzle
             loadButton.Text = "Load Progress";
             loadButton.UseVisualStyleBackColor = true;
             loadButton.Click += loadButton_Click;
+
             // 
             // comboBoxLabel
             // 
@@ -183,6 +187,7 @@ namespace NonogramPuzzle
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+
             ClientSize = new Size(836, 512);
             Controls.Add(solveButton);
             Controls.Add(buttonMainMenu);
@@ -196,12 +201,13 @@ namespace NonogramPuzzle
             Controls.Add(colCluesPanel);
             Controls.Add(rowsCluesPanel);
             Controls.Add(nonogram);
+
             Margin = new Padding(3, 2, 3, 2);
             Name = "NonogramGame";
-            Text = "Form1";
+            Text = "NONOGRAM Puzzle";
+            Load += NonogramGame_Load;
             ResumeLayout(false);
             PerformLayout();
-
         }
 
 

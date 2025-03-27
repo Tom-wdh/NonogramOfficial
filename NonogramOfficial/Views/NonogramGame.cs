@@ -5,7 +5,8 @@ using System.Windows.Forms;
 using NonogramOfficial.Controllers;
 using NonogramOfficial;
 using NonogramOfficial.Views;
-using NonogramPuzzle.Controllers;
+using NonogramOfficial;
+using NonogramOfficial.Helpers;
 
 namespace NonogramPuzzle
 {
@@ -15,10 +16,12 @@ namespace NonogramPuzzle
         private readonly IGameSaver gameSaver;
         private readonly IGameResetter gameResetter;
         private readonly NonogramController controller;
+        private AppSettings _settings;
 
         public NonogramGame()
         {
             InitializeComponent();
+            _settings = AppSettings.LoadSettings();
             controller = new NonogramController(nonogram, rowsCluesPanel, colCluesPanel, timerLabel);
             gameInitializer = controller;
             gameSaver = controller;
@@ -60,6 +63,19 @@ namespace NonogramPuzzle
             }
         }
 
+
+            // load in user settings
+            sizeComboBox.SelectedIndex = _settings.DefaultGameSize;
+            controller.InitializeGame();
+        }
+
+        private void NonogramGame_Load(object sender, EventArgs e)
+        {
+            if (_settings != null && !string.IsNullOrEmpty(_settings.FontFamily))
+            {
+                FontHelper.ApplyGlobalFont(this, _settings.FontFamily);
+            }
+        }
 
         private void sizeComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
