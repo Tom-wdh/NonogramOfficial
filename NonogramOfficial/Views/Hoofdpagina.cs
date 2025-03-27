@@ -28,12 +28,12 @@ namespace NonogramOfficial
             DialogResult result = MessageBox.Show("Have you played before?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
-                NonogramGame nonogramGameForm = new NonogramGame();
+                chooseDifficulty chooseDifficultyForm = new chooseDifficulty();
                 this.Hide();
-                nonogramGameForm.StartPosition = FormStartPosition.Manual; // Allow manual positioning
-                nonogramGameForm.Location = this.Location;
-                nonogramGameForm.Show();
-                nonogramGameForm.FormClosed += (s, args) => this.Close();
+                chooseDifficultyForm.StartPosition = FormStartPosition.Manual; // Allow manual positioning
+                chooseDifficultyForm.Location = this.Location;
+                chooseDifficultyForm.Show();
+                chooseDifficultyForm.FormClosed += (s, args) => this.Close();
             }
             else
             {

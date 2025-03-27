@@ -38,6 +38,12 @@ namespace NonogramPuzzle
             resetButton = new Button();
             saveButton = new Button();
             loadButton = new Button();
+
+            comboBoxLabel = new Label();
+            buttonStatistics = new Button();
+            buttonMainMenu = new Button();
+            solveButton = new Button();
+
             SuspendLayout();
             // 
             // nonogram
@@ -50,8 +56,9 @@ namespace NonogramPuzzle
             nonogram.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
             nonogram.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
             nonogram.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
-            nonogram.Location = new Point(289, 188);
-            nonogram.Margin = new Padding(2);
+
+            nonogram.Location = new Point(290, 188);
+            nonogram.Margin = new Padding(3, 2, 3, 2);
             nonogram.Name = "nonogram";
             nonogram.RowCount = 5;
             nonogram.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
@@ -66,7 +73,7 @@ namespace NonogramPuzzle
             // 
             rowsCluesPanel.Anchor = AnchorStyles.None;
             rowsCluesPanel.Location = new Point(202, 188);
-            rowsCluesPanel.Margin = new Padding(4, 3, 4, 3);
+            rowsCluesPanel.Margin = new Padding(4);
             rowsCluesPanel.Name = "rowsCluesPanel";
             rowsCluesPanel.Size = new Size(83, 292);
             rowsCluesPanel.TabIndex = 1;
@@ -74,10 +81,10 @@ namespace NonogramPuzzle
             // colCluesPanel
             // 
             colCluesPanel.Anchor = AnchorStyles.None;
-            colCluesPanel.Location = new Point(292, 81);
-            colCluesPanel.Margin = new Padding(4, 3, 4, 3);
+            colCluesPanel.Location = new Point(291, 81);
+            colCluesPanel.Margin = new Padding(4);
             colCluesPanel.Name = "colCluesPanel";
-            colCluesPanel.Size = new Size(295, 102);
+            colCluesPanel.Size = new Size(295, 101);
             colCluesPanel.TabIndex = 2;
             // 
             // timerLabel
@@ -95,8 +102,8 @@ namespace NonogramPuzzle
             sizeComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             sizeComboBox.FormattingEnabled = true;
             sizeComboBox.Items.AddRange(new object[] { "5x5", "10x10", "15x15", "20x20" });
-            sizeComboBox.Location = new Point(14, 40);
-            sizeComboBox.Margin = new Padding(4, 3, 4, 3);
+            sizeComboBox.Location = new Point(15, 69);
+            sizeComboBox.Margin = new Padding(4);
             sizeComboBox.Name = "sizeComboBox";
             sizeComboBox.Size = new Size(140, 23);
             sizeComboBox.TabIndex = 4;
@@ -104,10 +111,10 @@ namespace NonogramPuzzle
             // 
             // resetButton
             // 
-            resetButton.Location = new Point(14, 81);
-            resetButton.Margin = new Padding(4, 3, 4, 3);
+            resetButton.Location = new Point(14, 105);
+            resetButton.Margin = new Padding(4);
             resetButton.Name = "resetButton";
-            resetButton.Size = new Size(141, 27);
+            resetButton.Size = new Size(141, 26);
             resetButton.TabIndex = 5;
             resetButton.Text = "Reset";
             resetButton.UseVisualStyleBackColor = true;
@@ -115,10 +122,10 @@ namespace NonogramPuzzle
             // 
             // saveButton
             // 
-            saveButton.Location = new Point(14, 115);
-            saveButton.Margin = new Padding(4, 3, 4, 3);
+            saveButton.Location = new Point(14, 140);
+            saveButton.Margin = new Padding(4);
             saveButton.Name = "saveButton";
-            saveButton.Size = new Size(141, 27);
+            saveButton.Size = new Size(141, 26);
             saveButton.TabIndex = 6;
             saveButton.Text = "Save Progress";
             saveButton.UseVisualStyleBackColor = true;
@@ -126,20 +133,66 @@ namespace NonogramPuzzle
             // 
             // loadButton
             // 
-            loadButton.Location = new Point(14, 150);
-            loadButton.Margin = new Padding(4, 3, 4, 3);
+            loadButton.Location = new Point(14, 174);
+            loadButton.Margin = new Padding(4);
             loadButton.Name = "loadButton";
-            loadButton.Size = new Size(141, 27);
+            loadButton.Size = new Size(141, 26);
             loadButton.TabIndex = 7;
             loadButton.Text = "Load Progress";
             loadButton.UseVisualStyleBackColor = true;
             loadButton.Click += loadButton_Click;
+
+            // 
+            // comboBoxLabel
+            // 
+            comboBoxLabel.AutoSize = true;
+            comboBoxLabel.Font = new Font("Segoe UI", 9F);
+            comboBoxLabel.Location = new Point(15, 50);
+            comboBoxLabel.Name = "comboBoxLabel";
+            comboBoxLabel.Size = new Size(197, 15);
+            comboBoxLabel.TabIndex = 8;
+            comboBoxLabel.Text = "New game? - Choose your difficulty";
+            // 
+            // buttonStatistics
+            // 
+            buttonStatistics.Location = new Point(12, 440);
+            buttonStatistics.Name = "buttonStatistics";
+            buttonStatistics.Size = new Size(141, 26);
+            buttonStatistics.TabIndex = 9;
+            buttonStatistics.Text = "Statistics";
+            buttonStatistics.UseVisualStyleBackColor = true;
+            buttonStatistics.Click += buttonStatistics_Click;
+            // 
+            // buttonMainMenu
+            // 
+            buttonMainMenu.Location = new Point(12, 474);
+            buttonMainMenu.Name = "buttonMainMenu";
+            buttonMainMenu.Size = new Size(141, 26);
+            buttonMainMenu.TabIndex = 10;
+            buttonMainMenu.Text = "Main menu";
+            buttonMainMenu.UseVisualStyleBackColor = true;
+            buttonMainMenu.Click += buttonMainMenu_Click;
+            // 
+            // solveButton
+            // 
+            solveButton.Location = new Point(683, 474);
+            solveButton.Name = "solveButton";
+            solveButton.Size = new Size(141, 26);
+            solveButton.TabIndex = 11;
+            solveButton.Text = "Solve puzzle";
+            solveButton.UseVisualStyleBackColor = true;
+            solveButton.Click += solveButton_Click;
             // 
             // NonogramGame
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(835, 512);
+
+            ClientSize = new Size(836, 512);
+            Controls.Add(solveButton);
+            Controls.Add(buttonMainMenu);
+            Controls.Add(buttonStatistics);
+            Controls.Add(comboBoxLabel);
             Controls.Add(loadButton);
             Controls.Add(saveButton);
             Controls.Add(resetButton);
@@ -148,7 +201,8 @@ namespace NonogramPuzzle
             Controls.Add(colCluesPanel);
             Controls.Add(rowsCluesPanel);
             Controls.Add(nonogram);
-            Margin = new Padding(2);
+
+            Margin = new Padding(3, 2, 3, 2);
             Name = "NonogramGame";
             Text = "NONOGRAM Puzzle";
             Load += NonogramGame_Load;
@@ -169,5 +223,9 @@ namespace NonogramPuzzle
         private Button resetButton;
         private Button saveButton;
         private Button loadButton;
+        private Label comboBoxLabel;
+        private Button buttonStatistics;
+        private Button buttonMainMenu;
+        private Button solveButton;
     }
 }

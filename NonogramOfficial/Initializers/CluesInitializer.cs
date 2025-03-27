@@ -7,7 +7,7 @@ namespace NonogramPuzzle.Initializers
 {
     public static class CluesInitializer
     {
-        public static void InitializeClues(Panel rowsCluesPanel, Panel colCluesPanel, int[,] puzzle, int gridSize)
+        public static void InitializeClues(Panel rowsCluesPanel, Panel colCluesPanel, int[,] solution, int gridSize)
         {
             rowsCluesPanel.SuspendLayout();
             colCluesPanel.SuspendLayout();
@@ -18,7 +18,7 @@ namespace NonogramPuzzle.Initializers
 
             for (int row = 0; row < gridSize; row++)
             {
-                List<int> rowClues = NonogramHelpers.GetCluesForLine(puzzle, row, true);
+                List<int> rowClues = NonogramHelpers.GetCluesForLine(solution, row, true);
                 Label rowClueLabel = new Label
                 {
                     Text = string.Join(" ", rowClues),
@@ -32,7 +32,7 @@ namespace NonogramPuzzle.Initializers
 
             for (int col = 0; col < gridSize; col++)
             {
-                List<int> colClues = NonogramHelpers.GetCluesForLine(puzzle, col, false);
+                List<int> colClues = NonogramHelpers.GetCluesForLine(solution, col, false);
                 Panel colCluePanel = new Panel
                 {
                     Location = new Point(col * colWidth, 0),
