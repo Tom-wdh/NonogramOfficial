@@ -99,15 +99,14 @@
             // SettingsButton
             // 
             SettingsButton.Font = new Font("Segoe UI", 29F);
-            SettingsButton.Location = new Point(255, 160);
+            SettingsButton.Location = new Point(291, 213);
             SettingsButton.Margin = new Padding(3, 2, 3, 2);
             SettingsButton.Name = "SettingsButton";
-            SettingsButton.Size = new Size(208, 59);
+            SettingsButton.Size = new Size(238, 79);
             SettingsButton.TabIndex = 6;
             SettingsButton.Text = "Settings";
             SettingsButton.UseVisualStyleBackColor = true;
             SettingsButton.Click += SettingsButton_Click;
-
             // 
             // label2
             // 

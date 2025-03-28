@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using NonogramOfficial.Controllers;
-using NonogramPuzzle;
+using NonogramOfficial;
 
 namespace NonogramOfficial.Views
 {

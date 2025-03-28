@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
-using NonogramPuzzle.Models;
+using NonogramOfficial.Models;
 
-namespace NonogramPuzzle.Helpers
+namespace NonogramOfficial.Helpers
 {
     public static class NonogramHelpers
     {

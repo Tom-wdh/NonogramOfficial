@@ -8,7 +8,7 @@ using NonogramOfficial.Views;
 using NonogramOfficial;
 using NonogramOfficial.Helpers;
 
-namespace NonogramPuzzle
+namespace NonogramOfficial.Views
 {
     public partial class NonogramGame : Form
     {
@@ -65,9 +65,9 @@ namespace NonogramPuzzle
 
 
             // load in user settings
-            sizeComboBox.SelectedIndex = _settings.DefaultGameSize;
-            controller.InitializeGame();
-        }
+            //sizeComboBox.SelectedIndex = _settings.DefaultGameSize;
+            //controller.InitializeGame();
+ 
 
         private void NonogramGame_Load(object sender, EventArgs e)
         {

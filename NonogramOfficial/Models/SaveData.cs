@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace NonogramPuzzle.Models
+namespace NonogramOfficial.Models
 {
     public class SaveData
     {

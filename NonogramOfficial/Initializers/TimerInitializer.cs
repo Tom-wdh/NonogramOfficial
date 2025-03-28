@@ -2,7 +2,7 @@
 using System.Windows.Forms;
 using Timer = System.Windows.Forms.Timer;
 
-namespace NonogramPuzzle.Initializers
+namespace NonogramOfficial.Initializers
 {
     public static class TimerInitializer
     {

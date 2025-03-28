@@ -1,4 +1,4 @@
-﻿namespace NonogramPuzzle.Models
+﻿namespace NonogramOfficial.Models
 {
     public class CellState
     {

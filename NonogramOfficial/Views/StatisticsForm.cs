@@ -1,5 +1,5 @@
 ﻿using Newtonsoft.Json;
-using NonogramPuzzle.Models;
+using NonogramOfficial.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

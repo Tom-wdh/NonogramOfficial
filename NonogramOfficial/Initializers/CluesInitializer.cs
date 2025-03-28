@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
-using NonogramPuzzle.Helpers;
+using NonogramOfficial.Helpers;
 
-namespace NonogramPuzzle.Initializers
+namespace NonogramOfficial.Initializers
 {
     public static class CluesInitializer
     {
