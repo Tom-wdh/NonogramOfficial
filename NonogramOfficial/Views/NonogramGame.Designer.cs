@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace NonogramPuzzle
+namespace NonogramOfficial.Views
 {
     partial class NonogramGame
     {

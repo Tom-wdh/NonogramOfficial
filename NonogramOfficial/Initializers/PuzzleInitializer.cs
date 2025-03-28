@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-namespace NonogramPuzzle.Initializers
+namespace NonogramOfficial.Initializers
 {
     public static class PuzzleInitializer
     {

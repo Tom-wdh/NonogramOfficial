@@ -1,7 +1,7 @@
 using NonogramOfficial.Controllers;
 using NonogramOfficial.Properties;
 using NonogramOfficial.Views;
-using NonogramPuzzle;
+using NonogramOfficial;
 using Settings = NonogramOfficial.Views.Settings;
 
 namespace NonogramOfficial

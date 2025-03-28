@@ -5,12 +5,12 @@ using System.Windows.Forms;
 using Newtonsoft.Json;
 using NonogramOfficial.Controllers;
 using NonogramOfficial;
-using NonogramPuzzle.Helpers;
-using NonogramPuzzle.Initializers;
-using NonogramPuzzle.Models;
+using NonogramOfficial.Helpers;
+using NonogramOfficial.Initializers;
+using NonogramOfficial.Models;
 using Timer = System.Windows.Forms.Timer;
 
-namespace NonogramPuzzle.Controllers
+namespace NonogramOfficial.Controllers
 {
     public interface IGameInitializer
     {

@@ -2,7 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace NonogramPuzzle.Initializers
+namespace NonogramOfficial.Initializers
 {
     public static class NonogramInitializer
     {
