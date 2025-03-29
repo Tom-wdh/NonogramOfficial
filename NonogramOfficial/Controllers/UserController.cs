@@ -203,5 +203,11 @@ namespace NonogramOfficial.Controllers
             }
             return false;
         }
+
+        public void LogOutUser()
+        {
+            LoggedInUser = null;
+        }
+
     }
 }

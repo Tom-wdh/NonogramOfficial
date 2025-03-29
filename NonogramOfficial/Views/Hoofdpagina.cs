@@ -110,6 +110,7 @@ namespace NonogramOfficial
                 buttonLogin.Enabled = true;
                 buttonRegister.Visible = true;
                 buttonRegister.Enabled = true;
+                buttonLogout.Visible = false;
             }
         }
 
@@ -117,9 +118,11 @@ namespace NonogramOfficial
         {
             if (_uc.LoggedInUser != null)
             {
+                _uc.LogOutUser();
                 // Call a method to handle the logout process
                 MessageBox.Show("You have been logged out", "Logout", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 DisableButtons();
+                
             }
         }
     }
