@@ -46,18 +46,19 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 40F);
-            label1.Location = new Point(245, 28);
+            label1.Location = new Point(214, 21);
             label1.Name = "label1";
-            label1.Size = new Size(358, 89);
+            label1.Size = new Size(290, 72);
             label1.TabIndex = 0;
             label1.Text = "Nonogram";
             // 
             // button1
             // 
             button1.Font = new Font("Segoe UI", 30F);
-            button1.Location = new Point(291, 129);
+            button1.Location = new Point(255, 97);
+            button1.Margin = new Padding(3, 2, 3, 2);
             button1.Name = "button1";
-            button1.Size = new Size(238, 79);
+            button1.Size = new Size(208, 59);
             button1.TabIndex = 1;
             button1.Text = "Start";
             button1.UseVisualStyleBackColor = true;
@@ -66,9 +67,10 @@
             // button2
             // 
             button2.Font = new Font("Segoe UI", 30F);
-            button2.Location = new Point(291, 297);
+            button2.Location = new Point(255, 223);
+            button2.Margin = new Padding(3, 2, 3, 2);
             button2.Name = "button2";
-            button2.Size = new Size(238, 79);
+            button2.Size = new Size(208, 59);
             button2.TabIndex = 2;
             button2.Text = "Quit";
             button2.UseVisualStyleBackColor = true;
@@ -76,10 +78,9 @@
             // 
             // buttonLogin
             // 
-            buttonLogin.Location = new Point(384, 383);
-            buttonLogin.Margin = new Padding(3, 4, 3, 4);
+            buttonLogin.Location = new Point(336, 287);
             buttonLogin.Name = "buttonLogin";
-            buttonLogin.Size = new Size(145, 31);
+            buttonLogin.Size = new Size(127, 23);
             buttonLogin.TabIndex = 3;
             buttonLogin.Text = "Login";
             buttonLogin.UseVisualStyleBackColor = true;
@@ -87,10 +88,9 @@
             // 
             // buttonRegister
             // 
-            buttonRegister.Location = new Point(291, 383);
-            buttonRegister.Margin = new Padding(3, 4, 3, 4);
+            buttonRegister.Location = new Point(255, 287);
             buttonRegister.Name = "buttonRegister";
-            buttonRegister.Size = new Size(86, 31);
+            buttonRegister.Size = new Size(75, 23);
             buttonRegister.TabIndex = 4;
             buttonRegister.Text = "Register";
             buttonRegister.UseVisualStyleBackColor = true;
@@ -99,10 +99,10 @@
             // SettingsButton
             // 
             SettingsButton.Font = new Font("Segoe UI", 29F);
-            SettingsButton.Location = new Point(291, 213);
+            SettingsButton.Location = new Point(255, 160);
             SettingsButton.Margin = new Padding(3, 2, 3, 2);
             SettingsButton.Name = "SettingsButton";
-            SettingsButton.Size = new Size(238, 79);
+            SettingsButton.Size = new Size(208, 59);
             SettingsButton.TabIndex = 6;
             SettingsButton.Text = "Settings";
             SettingsButton.UseVisualStyleBackColor = true;
@@ -112,9 +112,9 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 40F);
-            label2.Location = new Point(245, 31);
+            label2.Location = new Point(214, 23);
             label2.Name = "label2";
-            label2.Size = new Size(358, 89);
+            label2.Size = new Size(290, 72);
             label2.TabIndex = 0;
             label2.Text = "Nonogram";
             // 
@@ -122,10 +122,9 @@
             // 
             UserPictureBox.BorderStyle = BorderStyle.FixedSingle;
             UserPictureBox.Image = (Image)resources.GetObject("UserPictureBox.Image");
-            UserPictureBox.Location = new Point(14, 368);
-            UserPictureBox.Margin = new Padding(3, 4, 3, 4);
+            UserPictureBox.Location = new Point(12, 276);
             UserPictureBox.Name = "UserPictureBox";
-            UserPictureBox.Size = new Size(58, 66);
+            UserPictureBox.Size = new Size(51, 50);
             UserPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
             UserPictureBox.TabIndex = 7;
             UserPictureBox.TabStop = false;
@@ -133,19 +132,21 @@
             // 
             // buttonLogout
             // 
-            buttonLogout.Location = new Point(694, 410);
+            buttonLogout.Location = new Point(607, 308);
+            buttonLogout.Margin = new Padding(3, 2, 3, 2);
             buttonLogout.Name = "buttonLogout";
-            buttonLogout.Size = new Size(94, 29);
+            buttonLogout.Size = new Size(82, 22);
             buttonLogout.TabIndex = 8;
             buttonLogout.Text = "Logout";
             buttonLogout.UseVisualStyleBackColor = true;
+            buttonLogout.Visible = false;
             buttonLogout.Click += buttonLogout_Click;
             // 
             // Hoofdpagina
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 451);
+            ClientSize = new Size(700, 338);
             Controls.Add(buttonLogout);
             Controls.Add(UserPictureBox);
             Controls.Add(SettingsButton);
@@ -155,6 +156,7 @@
             Controls.Add(button1);
             Controls.Add(label2);
             Controls.Add(label1);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "Hoofdpagina";
             Text = "Nonogram game";
             Load += Hoofdpagina_Load;
