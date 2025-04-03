@@ -6,11 +6,12 @@ namespace NonogramOfficial.Controllers
 {
     public class SettingsController
     {
-        private readonly string _filePath = "settings.json";
+        private readonly string _filePath;
         public SettingsModel Settings { get; private set; }
 
-        public SettingsController()
+        public SettingsController(string filePath = "settings.json")
         {
+            _filePath = filePath;
             LoadSettings();
         }
 

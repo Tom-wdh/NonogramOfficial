@@ -12,7 +12,7 @@ namespace NonogramOfficial.Models
         private static readonly string settingsFile = "settings.json";
 
         public string FontFamily { get; set; } = "Arial"; // Standaard waarde
-        public int DefaultGameSize { get; set; } //  0 - 3 modes
+        public int DefaultGameSize { get; set; } = 0; //  0 - 3 modes
 
 
         public static AppSettings LoadSettings()
