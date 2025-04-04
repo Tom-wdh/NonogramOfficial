@@ -6,6 +6,7 @@ namespace NonogramOfficial.Controllers
 {
     public class SettingsController
     {
+        private static readonly object fileLock = new object();
         private readonly string _filePath;
         public SettingsModel Settings { get; private set; }
 
@@ -17,21 +18,26 @@ namespace NonogramOfficial.Controllers
 
         public void SaveSettings()
         {
-            var json = JsonConvert.SerializeObject(Settings, Formatting.Indented);
-            File.WriteAllText(_filePath, json);
+            lock (fileLock)
+            {
+                var json = JsonConvert.SerializeObject(Settings, Formatting.Indented);
+                File.WriteAllText(_filePath, json);
+            }
         }
 
         public void LoadSettings()
         {
-            if (File.Exists(_filePath))
-            {
-                var json = File.ReadAllText(_filePath);
-                Settings = JsonConvert.DeserializeObject<SettingsModel>(json) ?? new SettingsModel();
-            }
-            else
-            {
-                Settings = new SettingsModel();
-                SaveSettings();
+            lock (fileLock) {
+                if (File.Exists(_filePath))
+                {
+                    var json = File.ReadAllText(_filePath);
+                    Settings = JsonConvert.DeserializeObject<SettingsModel>(json) ?? new SettingsModel();
+                }
+                else
+                {
+                    Settings = new SettingsModel();
+                    SaveSettings();
+                }
             }
         }
     }

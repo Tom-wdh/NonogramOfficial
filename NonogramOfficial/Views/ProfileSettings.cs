@@ -59,7 +59,7 @@ namespace NonogramOfficial
             }
         }
 
-        private void DeleteUser_Click(object sender, EventArgs e)
+        private async void DeleteUser_Click(object sender, EventArgs e)
         {
             // Bevestigingsdialoog
             var confirm = MessageBox.Show(
@@ -71,7 +71,7 @@ namespace NonogramOfficial
             if (confirm == DialogResult.Yes)
             {
                 // Probeer de gebruiker te verwijderen
-                bool deleted = _uc.DeleteUser(_uc.LoggedInUser.Username);
+                bool deleted = await _uc.DeleteUserAsync(_uc.LoggedInUser?.Username);
                 if (deleted)
                 {
                     MessageBox.Show("Account deleted!");
