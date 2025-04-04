@@ -91,14 +91,14 @@ public class UserControllerTests
     }
 
     [Fact]
-    public void DeleteUser_ShouldReturnTrue_WhenUserIsDeleted()
+    public async Task DeleteUser_ShouldReturnTrue_WhenUserIsDeleted()
     {
         // Arrange
         var username = "testuser";
-        _userController.RegisterUserAsync(username, "password").Wait();
+        await _userController.RegisterUserAsync(username, "password");
 
         // Act
-        var result = _userController.DeleteUser(username);
+        var result = await _userController.DeleteUserAsync(username);
 
         // Assert
         Assert.True(result);
