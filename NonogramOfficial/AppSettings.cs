@@ -1,5 +1,5 @@
 ﻿using System.IO;
-using Newtonsoft.Json;
+using System.Text.Json;
 
 public class AppSettings
 {
@@ -14,14 +14,12 @@ public class AppSettings
             return new AppSettings(); // Als er geen bestand is, maak nieuwe aan
 
         var json = File.ReadAllText(settingsFile);
-        return JsonConvert.DeserializeObject<AppSettings>(json) ?? new AppSettings();
+        return JsonSerializer.Deserialize<AppSettings>(json) ?? new AppSettings();
     }
 
     public void SaveSettings()
     {
-        var json = JsonConvert.SerializeObject(this, Formatting.Indented);
+        var json = JsonSerializer.Serialize(this, new JsonSerializerOptions { WriteIndented = true });
         File.WriteAllText(settingsFile, json);
     }
-
-
 }

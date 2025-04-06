@@ -1,13 +1,8 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json;
 using NonogramOfficial.Models;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 using System.Windows.Forms;
 
 namespace NonogramOfficial.Views
@@ -27,7 +22,7 @@ namespace NonogramOfficial.Views
             if (File.Exists(filePath))
             {
                 string json = File.ReadAllText(filePath);
-                var solvedGames = JsonConvert.DeserializeObject<List<SolvedGameData>>(json) ?? new List<SolvedGameData>();
+                var solvedGames = JsonSerializer.Deserialize<List<SolvedGameData>>(json) ?? new List<SolvedGameData>();
 
                 foreach (var game in solvedGames)
                 {

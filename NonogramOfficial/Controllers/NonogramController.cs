@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Drawing;
 using System.IO;
+using System.Text.Json;
 using System.Windows.Forms;
-using Newtonsoft.Json;
 using NonogramOfficial.Controllers;
 using NonogramOfficial;
 using NonogramOfficial.Helpers;
@@ -127,13 +127,13 @@ namespace NonogramOfficial.Controllers
         {
             var saveData = new SaveData
             {
-                Puzzle = puzzle,
-                Solution = solution,
+                Puzzle = ArrayConverter.ToJagged(puzzle),
+                Solution = ArrayConverter.ToJagged(solution),
                 Timer = (DateTime.Now - startTime).ToString(@"hh\:mm\:ss"),
                 CurrentState = NonogramHelpers.GetCurrentState(nonogram, gridSize)
             };
 
-            string json = JsonConvert.SerializeObject(saveData, Formatting.Indented);
+            string json = JsonSerializer.Serialize(saveData, new JsonSerializerOptions { WriteIndented = true });
             string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, $"{saveName}_puzzle_save.json");
 
             try
@@ -146,6 +146,7 @@ namespace NonogramOfficial.Controllers
                 MessageBox.Show($"Failed to save progress: {ex.Message}");
             }
         }
+
         public void LoadGame(string saveName)
         {
             string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, $"{saveName}_puzzle_save.json");
@@ -155,10 +156,10 @@ namespace NonogramOfficial.Controllers
                 try
                 {
                     string json = File.ReadAllText(filePath);
-                    var saveData = JsonConvert.DeserializeObject<SaveData>(json);
+                    var saveData = JsonSerializer.Deserialize<SaveData>(json);
 
-                    puzzle = saveData.Puzzle;
-                    solution = saveData.Solution;
+                    puzzle = ArrayConverter.To2D(saveData.Puzzle);
+                    solution = ArrayConverter.To2D(saveData.Solution);
                     gridSize = puzzle.GetLength(0);
                     startTime = DateTime.Now - TimeSpan.Parse(saveData.Timer);
 
@@ -202,7 +203,6 @@ namespace NonogramOfficial.Controllers
             }
         }
 
-
         private void SaveSolvedGame()
         {
             var solvedGameData = new SolvedGameData
@@ -218,7 +218,7 @@ namespace NonogramOfficial.Controllers
             if (File.Exists(filePath))
             {
                 string json = File.ReadAllText(filePath);
-                solvedGames = JsonConvert.DeserializeObject<List<SolvedGameData>>(json) ?? new List<SolvedGameData>();
+                solvedGames = JsonSerializer.Deserialize<List<SolvedGameData>>(json) ?? new List<SolvedGameData>();
             }
             else
             {
@@ -227,7 +227,7 @@ namespace NonogramOfficial.Controllers
 
             solvedGames.Add(solvedGameData);
 
-            string updatedJson = JsonConvert.SerializeObject(solvedGames, Formatting.Indented);
+            string updatedJson = JsonSerializer.Serialize(solvedGames, new JsonSerializerOptions { WriteIndented = true });
             File.WriteAllText(filePath, updatedJson);
         }
 
@@ -287,8 +287,5 @@ namespace NonogramOfficial.Controllers
             mainMenu.Show();
             currentForm.Hide();
         }
-
     }
 }
-
-

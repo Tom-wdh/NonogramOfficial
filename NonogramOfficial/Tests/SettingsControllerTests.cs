@@ -1,4 +1,4 @@
-using Newtonsoft.Json;
+using System.Text.Json;
 using NonogramOfficial.Controllers;
 using NonogramOfficial.Models;
 using System.IO;
@@ -16,7 +16,7 @@ namespace NonogramOfficial.Tests
         {
             // Arrange
             var settings = new SettingsModel { FontFamily = "Georgia", DefaultGameSize = 10 };
-            var settingsJson = JsonConvert.SerializeObject(settings, Formatting.Indented);
+            var settingsJson = JsonSerializer.Serialize(settings, new JsonSerializerOptions { WriteIndented = true });
             File.WriteAllText(TestFilePath, settingsJson);
 
             var settingsController = new SettingsController(TestFilePath);
@@ -73,7 +73,7 @@ namespace NonogramOfficial.Tests
             settingsController.SaveSettings();
 
             // Assert
-            var expectedJson = JsonConvert.SerializeObject(settingsController.Settings, Formatting.Indented);
+            var expectedJson = JsonSerializer.Serialize(settingsController.Settings, new JsonSerializerOptions { WriteIndented = true });
             var actualJson = File.ReadAllText(TestFilePath);
             Assert.Equal(expectedJson, actualJson);
 

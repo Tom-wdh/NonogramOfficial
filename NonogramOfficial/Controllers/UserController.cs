@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Security.Cryptography;
-using Newtonsoft.Json;
+using System.Text.Json;
 using NonogramOfficial.Helpers;
 using NonogramOfficial.Models;
 using User = NonogramOfficial.Models.User;
@@ -86,7 +86,7 @@ namespace NonogramOfficial.Controllers
                 HashedPassword = hashedPassword
             };
 
-            string json = JsonConvert.SerializeObject(newUser, Formatting.Indented);
+            string json = JsonSerializer.Serialize(newUser, new JsonSerializerOptions { WriteIndented = true });
             await File.WriteAllTextAsync(filePath, json);
 
             return true;
@@ -113,7 +113,7 @@ namespace NonogramOfficial.Controllers
                 semaphore.Release();
             }
 
-            var user = JsonConvert.DeserializeObject<User>(json);
+            var user = JsonSerializer.Deserialize<User>(json);
 
             if (user == null)
             {
@@ -155,7 +155,7 @@ namespace NonogramOfficial.Controllers
                 semaphore.Release();
             }
 
-            var user = JsonConvert.DeserializeObject<User>(json);
+            var user = JsonSerializer.Deserialize<User>(json);
             string newSalt = HashHelper.GenerateSalt();
             string newHashedPassword = HashHelper.HashPassword(newPassword!, newSalt);
 
@@ -172,7 +172,7 @@ namespace NonogramOfficial.Controllers
                 string oldUserDir = GetUserDirectory(oldUsername);
                 string newUserDir = GetUserDirectory(newUsername);
                 string newFilePath = GetUserFilePath(newUsername);
-                string updatedJson = JsonConvert.SerializeObject(user, Formatting.Indented);
+                string updatedJson = JsonSerializer.Serialize(user, new JsonSerializerOptions { WriteIndented = true });
 
                 await semaphore.WaitAsync();
                 try
@@ -202,7 +202,7 @@ namespace NonogramOfficial.Controllers
             else
             {
                 // Als de username niet is veranderd, update dan gewoon het bestand
-                string updatedJson = JsonConvert.SerializeObject(user, Formatting.Indented);
+                string updatedJson = JsonSerializer.Serialize(user, new JsonSerializerOptions { WriteIndented = true });
                 await File.WriteAllTextAsync(oldFilePath, updatedJson);
             }
 

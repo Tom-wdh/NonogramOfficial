@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json;
 using NonogramOfficial.Models;
 using System.IO;
 
@@ -20,18 +20,19 @@ namespace NonogramOfficial.Controllers
         {
             lock (fileLock)
             {
-                var json = JsonConvert.SerializeObject(Settings, Formatting.Indented);
+                var json = JsonSerializer.Serialize(Settings, new JsonSerializerOptions { WriteIndented = true });
                 File.WriteAllText(_filePath, json);
             }
         }
 
         public void LoadSettings()
         {
-            lock (fileLock) {
+            lock (fileLock)
+            {
                 if (File.Exists(_filePath))
                 {
                     var json = File.ReadAllText(_filePath);
-                    Settings = JsonConvert.DeserializeObject<SettingsModel>(json) ?? new SettingsModel();
+                    Settings = JsonSerializer.Deserialize<SettingsModel>(json) ?? new SettingsModel();
                 }
                 else
                 {
